@@ -1,7 +1,7 @@
 {
   "name": "react-rating-tool",
-  "description": "Two test React components",
-  "author": "rwltm",
+  "description": "Simple react rating tool to rate stuffs!",
+  "author": "Hemant Nirmalkar",
   "keywords": [
     "react",
     "components",
