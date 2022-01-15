@@ -1,0 +1,29 @@
+.stars-container {
+    position: relative;
+    float: left;
+}
+.rotate-star {
+    transform: rotate(180deg);
+}
+.rating {
+    transform: rotate(180deg);
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold;
+    cursor: pointer;
+}
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+
+.rating > .rated:before,
+.rating > rated ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: gold;
+}

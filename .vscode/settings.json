@@ -1,0 +1,17 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": true,
+    "editor.snippetSuggestions": "top",
+    "editor.wordBasedSuggestions": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.suggestSelection": "recentlyUsed",
+        "editor.suggest.showKeywords": false
+    },
+    "editor.renderWhitespace": "boundary",
+    "files.exclude": {
+        "USE_GITIGNORE": true
+    },
+    "editor.smoothScrolling": true
+}
