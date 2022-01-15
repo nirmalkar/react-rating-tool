@@ -1,5 +1,6 @@
 .stars-container {
     position: relative;
+    width: 100%;
     float: left;
 }
 .rotate-star {
@@ -7,6 +8,9 @@
 }
 .rating {
     transform: rotate(180deg);
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
 }
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {

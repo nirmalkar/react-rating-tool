@@ -2,20 +2,15 @@ import React, { useEffect } from "react";
 import "./starRating.css";
 
 const StarRating = (props) => {
-    let { count, top, left, setRating, value, size } = props;
-
-    useEffect(() => {
-        if (!count) {
-            count = 5;
-        }
-    }, []);
+    let { count, top, left, setRating, value, size, styles } = props;
+    const starCount = count ? count : 5;
 
     const alignments = {
-        top: `${top ? top : 0}rem`,
-        left: `${left ? left : 0}rem`,
+        top: `${top ? top : 0}px`,
+        left: `${left ? left : 0}px`,
     };
 
-    const getStars = (count, alignments) => {
+    const getStars = (starCount, value, setRating, alignments, styles) => {
         const handleStarRating = (value) => {
             setRating(value);
         };
@@ -24,9 +19,9 @@ const StarRating = (props) => {
             <div className="stars-container">
                 <div
                     className="rating"
-                    style={{ fontSize: `${size}px`, ...alignments }}
+                    style={{ fontSize: `${size}px`, ...alignments, ...styles }}
                 >
-                    {Array.from(Array(count).keys())
+                    {Array.from(Array(starCount).keys())
                         .reverse()
                         .map((ele) => {
                             if (ele + 1 <= value) {
@@ -56,7 +51,7 @@ const StarRating = (props) => {
             </div>
         );
     };
-    return getStars(count, value, setRating, alignments);
+    return getStars(starCount, value, setRating, alignments, styles);
 };
 
 export default React.memo(StarRating);
