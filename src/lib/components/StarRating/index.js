@@ -4,6 +4,7 @@ import "./starRating.css";
 const StarRating = (props) => {
     let { count, top, left, setRating, value, size, styles } = props;
     const starCount = count ? count : 5;
+    const starContainerPadding = (size ? size * 35 : 600) / 50;
 
     const alignments = {
         top: `${top ? top : 0}px`,
@@ -12,11 +13,16 @@ const StarRating = (props) => {
 
     const getStars = (starCount, value, setRating, alignments, styles) => {
         const handleStarRating = (value) => {
-            setRating(value);
+            if (setRating) {
+                setRating(value);
+            }
         };
 
         return (
-            <div className="stars-container">
+            <div
+                className="stars-container"
+                style={{ padding: `${starContainerPadding}px` }}
+            >
                 <div
                     className="rating"
                     style={{ fontSize: `${size}px`, ...alignments, ...styles }}
