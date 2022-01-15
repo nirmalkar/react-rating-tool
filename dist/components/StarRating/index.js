@@ -30,31 +30,34 @@ const StarRating = props => {
     left,
     setRating,
     value,
-    size
+    size,
+    styles
   } = props;
-  (0, _react.useEffect)(() => {
-    if (!count) {
-      count = 5;
-    }
-  }, []);
+  const starCount = count ? count : 5;
+  const starContainerPadding = (size ? size * 35 : 600) / 50;
   const alignments = {
-    top: "".concat(top ? top : 0, "rem"),
-    left: "".concat(left ? left : 0, "rem")
+    top: "".concat(top ? top : 0, "px"),
+    left: "".concat(left ? left : 0, "px")
   };
 
-  const getStars = (count, alignments) => {
+  const getStars = (starCount, value, setRating, alignments, styles) => {
     const handleStarRating = value => {
-      setRating(value);
+      if (setRating) {
+        setRating(value);
+      }
     };
 
     return /*#__PURE__*/_react.default.createElement("div", {
-      className: "stars-container"
+      className: "stars-container",
+      style: {
+        padding: "".concat(starContainerPadding, "px")
+      }
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "rating",
-      style: _objectSpread({
+      style: _objectSpread(_objectSpread({
         fontSize: "".concat(size, "px")
-      }, alignments)
-    }, Array.from(Array(count).keys()).reverse().map(ele => {
+      }, alignments), styles)
+    }, Array.from(Array(starCount).keys()).reverse().map(ele => {
       if (ele + 1 <= value) {
         return /*#__PURE__*/_react.default.createElement("span", {
           className: "rated rotate-star",
@@ -71,7 +74,7 @@ const StarRating = props => {
     })));
   };
 
-  return getStars(count, value, setRating, alignments);
+  return getStars(starCount, value, setRating, alignments, styles);
 };
 
 var _default = /*#__PURE__*/_react.default.memo(StarRating);
