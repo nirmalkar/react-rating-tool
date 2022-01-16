@@ -2,13 +2,12 @@
 
 ![Rating Stars](http://g.recordit.co/JZKwYl3OEy.gif)
 
-🎉 React-Rating-Tool allows helps you to add a rating component to your app with ease.
+🎉 React-Rating-Tool helps you to add a rating component to your app with ease.
 
 ## Installation
 
 ```
 $ npm install --save react-rating-tool
-$ yarn add react-rating-tool
 ```
 
 ## Features
@@ -44,7 +43,7 @@ function App() {
 
 ## Demo
 
-[DEMO](https://clever-dubinsky-fcc527.netlify.app/)
+[Click here to see Demo](https://clever-dubinsky-fcc527.netlify.app/)
 
 ## License
 
