@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StarRating from "./lib/components/StarRating";
+import { StarRating } from "react-rating-tool";
 
 function App() {
     const [rating, setRating] = useState(0);

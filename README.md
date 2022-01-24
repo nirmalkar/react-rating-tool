@@ -21,7 +21,7 @@ $ npm install --save react-rating-tool
 ## The gist
 
 ```jsx
-import React from "react";
+import React, { useState } from "react";
 
 import { StarRating } from "react-rating-tool";
 
@@ -31,7 +31,7 @@ function App() {
     return (
         <div>
             <StarRating
-                count={3}
+                count={5}
                 value={rating}
                 setRating={setRating}
                 size={45}
@@ -39,6 +39,8 @@ function App() {
         </div>
     );
 }
+
+export default App;
 ```
 
 ## Demo
